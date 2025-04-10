@@ -1,4 +1,4 @@
-{% set version = "0.25.0" %}
+{% set version = "0.26.0" %}
 
 package:
   name: "xtensor"
@@ -28,7 +28,7 @@ requirements:
 test:
   commands:
     - test -d ${PREFIX}/include/xtensor  # [unix]
-    - test -f ${PREFIX}/include/xtensor/conxtainers/xarray.hpp  # [unix]
+    - test -f ${PREFIX}/include/xtensor/containers/xarray.hpp  # [unix]
     - test -f ${PREFIX}/share/cmake/xtensor/xtensorConfig.cmake  # [unix]
     - test -f ${PREFIX}/share/cmake/xtensor/xtensorConfigVersion.cmake  # [unix]
     - if not exist %LIBRARY_PREFIX%\include\xtensor\containers\xarray.hpp (exit 1)  # [win]

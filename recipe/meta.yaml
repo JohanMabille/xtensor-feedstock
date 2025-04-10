@@ -1,13 +1,12 @@
-{% set name = "xtensor" %}
-{% set version = "0.26.0" %}
+context:
+  version: "0.26.0"
 
 
 package:
-  name: {{ name|lower }}
+  name: "xtensor"
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/xtensor-stack/xtensor/archive/{{ version }}.tar.gz
   sha256: f5f42267d850f781d71097b50567a480a82cd6875a5ec3e6238555e0ef987dc6
 
@@ -31,10 +30,10 @@ requirements:
 test:
   commands:
     - test -d ${PREFIX}/include/xtensor  # [unix]
-    - test -f ${PREFIX}/include/xtensor/xarray.hpp  # [unix]
+    - test -f ${PREFIX}/include/xtensor/conxtainers/xarray.hpp  # [unix]
     - test -f ${PREFIX}/share/cmake/xtensor/xtensorConfig.cmake  # [unix]
     - test -f ${PREFIX}/share/cmake/xtensor/xtensorConfigVersion.cmake  # [unix]
-    - if not exist %LIBRARY_PREFIX%\include\xtensor\xarray.hpp (exit 1)  # [win]
+    - if not exist %LIBRARY_PREFIX%\include\xtensor\containers\xarray.hpp (exit 1)  # [win]
     - if not exist %LIBRARY_PREFIX%\share\cmake\xtensor\xtensorConfig.cmake (exit 1)  # [win]
     - if not exist %LIBRARY_PREFIX%\share\cmake\xtensor\xtensorConfigVersion.cmake (exit 1)  # [win]
 
